@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>self++ Foundation | Making Longevity Accessible to Everyone</title>
+    <style>
+        :root {
+            --primary: #2d5a3d;
+            --secondary: #4a7c59;
+            --accent: #87c47d;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+            --text: #333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover { color: var(--accent); }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .hero h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover { background: var(--secondary); }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Blog Section */
+        .blog-section {
+            margin-top: 3rem;
+        }
+        
+        .blog-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .blog-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-card .date {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-card p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .blog-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .blog-card a:hover { text-decoration: underline; }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            nav ul { gap: 1rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>self++ Foundation</h1>
+        <p>Making Longevity Accessible to Everyone</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#progress">Progress</a></li>
+            <li><a href="#transparency">Transparency</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h2>Our Mission</h2>
+            <p>The self++ Foundation is a registered UK charity dedicated to advancing human health and longevity. We believe that life-extending treatments and supplements should be accessible to everyone, regardless of their economic status.</p>
+            <p>Through controlled access to Antarctic resources, we fund research, distribute treatments at cost, and educate the public on evidence-based longevity interventions.</p>
+            <a href="#research" class="cta-button">Read Our Research</a>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Beneficiaries Reached</p>
+            </div>
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Research Projects Funded</p>
+            </div>
+            <div class="stat-card">
+                <h3>3</h3>
+                <p>Weekly Research Updates</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Transparent Tracking</p>
+            </div>
+        </section>
+        
+        <!-- Blog Section -->
+        <section class="blog-section" id="research">
+            <h2>Latest Research & Updates</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <h3>Longevity Research Roundup: Week of March 9-15, 2026</h3>
+                    <p class="date">Published: March 11, 2026</p>
+                    <p>This week saw significant developments in amino acid-longevity connections, with a massive 270,000-person study linking tyrosine levels to male lifespan...</p>
+                    <a href="content/2026-03-11-research-roundup.md">Read Full Article →</a>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <h3>Deep Dive: Metformin</h3>
+                    <p class="date">Published: March 13, 2026</p>
+                    <p>Metformin is the most well-studied, accessible, and potentially beneficial longevity intervention available today. We examine the evidence, mechanisms, and practical considerations...</p>
+                    <a href="content/2026-03-13-metformin-deep-dive.md">Read Full Article →</a>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <h3>Clinical Trial Updates + Charity Progress: Week of March 9-15, 2026</h3>
+                    <p class="date">Published: March 15, 2026</p>
+                    <p>Updates on ongoing longevity trials, upcoming readouts, and self++ Foundation progress including infrastructure establishment and upcoming milestones...</p>
+                    <a href="content/2026-03-15-trial-updates.md">Read Full Article →</a>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Transparency Section -->
+        <section class="hero" id="transparency" style="margin-top: 3rem;">
+            <h2>Transparent by Design</h2>
+            <p>All our financial transactions, resource distributions, and research funding are publicly tracked and verifiable.</p>
+            <p>Explore our complete documentation on GitHub:</p>
+            <a href="https://github.com/s-k-y-h-i-g-h/antarctic-sovereignty" class="cta-button">View Documentation</a>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <p><strong>self++ Foundation</strong></p>
+        <p>Registered UK Charity (Pending)</p>
+        <p>19 Elderflower Way, Downham Market, Norfolk, PE38 9US, United Kingdom</p>
+        <p>Email: <a href="mailto:info@self++-foundation.org">info@self++-foundation.org</a></p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">
+            Disclaimer: This content is for informational purposes only and does not constitute medical advice. 
+            Always consult a healthcare professional before starting any supplement or treatment.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">
+            © 2026 self++ Foundation. All documentation available at 
+            <a href="https://github.com/s-k-y-h-i-g-h/antarctic-sovereignty">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
